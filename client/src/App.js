@@ -1,11 +1,19 @@
 import React from 'react';
-import './styles/App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import Home from './components/Home'
+
+import 'spectre.css'
 
 function App() {
   return (
-    <div>
-      )))
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

@@ -1,0 +1,18 @@
+header {
+  background: #ffb700;
+}
+
+.navbar-item {
+  padding: 10px 15px;
+}
+
+.navbar-item:hover {
+  border-bottom: 3px solid #ffffff;
+  padding-bottom: 7px;
+}
+
+.navbar-item:hover,
+.navbar-item:focus,
+.navbar-item:active {
+  text-decoration: none;
+}
