@@ -25,3 +25,43 @@ a:visited {
   background: transparent;
   color: #ffffff;
 }
+
+.modal-container {
+  padding: 0;
+}
+
+.modal-header {
+  background: #ffb700;
+}
+
+.modal-title {
+  color: #ffffff;
+}
+
+.btn-create,
+.btn-cancel {
+  color: #ffffff;
+  padding: 0 20px;
+  border: none;
+}
+
+.btn-create {
+  background-color: #ffb700;
+}
+
+.btn-cancel {
+  background-color: #a65800;
+  margin-left: 20px;
+}
+
+.btn-create:hover,
+.btn-create:focus,
+.btn-create:active {
+  background-color: #bf9730;
+}
+
+.btn-cancel:hover,
+.btn-cancel:focus,
+.btn-cancel:active {
+  background-color: #bf7c30;
+}
