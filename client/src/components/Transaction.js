@@ -1,10 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
+import TransactionModal from './TransactionModal'
+
+import { toggleTransactionModal } from './store/actions'
 
 import '../styles/transaction.css'
 
-function Transaction() {
+function Transaction({ showTransactionModal }) {
   return (
     <div className="column col-12">
+      <div className="header-transaction">
+        <button className="btn btn-plus s-circle tooltip tooltip-left" onClick={showTransactionModal} data-tooltip="Create transaction"><FontAwesomeIcon icon={faPlus} size="lg" /></button>
+      </div>
       <table className="table table-striped table-hover">
         <thead>
           <tr>
@@ -26,41 +36,15 @@ function Transaction() {
           </tr>
         </tbody>
       </table>
-      <div className="modal" id="modal-id">
-        <a href="#close" className="modal-overlay" aria-label="Close"></a>
-        <div className="modal-container">
-          <div className="modal-header">
-            <a href="#close" className="btn btn-clear float-right" aria-label="Close"></a>
-            <div className="modal-title h5">Create transaction</div>
-          </div>
-          <div className="modal-body">
-            <div className="content">
-              <div className="form-group">
-                <label className="form-label" htmlFor="input-amount">Amount</label>
-                <input className="form-input" type="text" id="input-amount" placeholder="Amount" />
-              </div>
-              <div className="form-group">
-                <label className="form-label" htmlFor="input-description">Description (optional)</label>
-                <textarea className="form-input" id="input-description" placeholder="Description" rows="3"></textarea>
-              </div>
-              <div className="form-group">
-                <select className="form-select">
-                  <option>Choose a category</option>
-                  <option>Category</option>
-                  <option>Category</option>
-                  <option>Category</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className="modal-footer">
-            <button className="btn btn-create">Create</button>
-            <button className="btn btn-cancel">Cancel</button>
-          </div>
-        </div>
-      </div>
+      <TransactionModal />
     </div>
   )
 }
 
-export default Transaction;
+const mapDispatchToProps = dispatch => {
+  return {
+    showTransactionModal: () => dispatch(toggleTransactionModal(true))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Transaction);

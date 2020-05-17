@@ -26,6 +26,15 @@ a:visited {
   color: #ffffff;
 }
 
+.btn-plus,
+.btn-plus:hover,
+.btn-plus:focus,
+.btn-plus:active {
+  border: none;
+  background: transparent;
+  color: #ffb700;
+}
+
 .modal-container {
   padding: 0;
 }

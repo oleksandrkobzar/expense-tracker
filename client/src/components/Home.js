@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChartBar, faBars, faReceipt, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faChartBar, faBars, faReceipt } from '@fortawesome/free-solid-svg-icons'
 
 import Transaction from './Transaction'
 
@@ -17,10 +17,9 @@ function Home() {
             <div className="column col-12 navbar">
               <section className="navbar-section">
                 <a className="navbar-item" href="/transaction"><FontAwesomeIcon icon={faReceipt} /> Transactions</a>
-                <a className="navbar-item" href="#"><FontAwesomeIcon icon={faChartBar} /> Expense Trends</a>
+                <a className="navbar-item" href="/"><FontAwesomeIcon icon={faChartBar} /> Expense Trends</a>
               </section>
               <section className="navbar-section">
-                <button className="btn btn-menu"><FontAwesomeIcon icon={faPlus} size="lg" /></button>
                 <button className="btn btn-menu"><FontAwesomeIcon icon={faBars} size="lg" /></button>
               </section>
             </div>
