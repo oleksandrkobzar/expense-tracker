@@ -74,3 +74,28 @@ a:visited {
 .btn-cancel:active {
   background-color: #bf7c30;
 }
+
+.form-login a,
+.form-login a:hover,
+.form-login a:focus,
+.form-login a:active {
+  color: #172caf;
+}
+
+.btn-login {
+  width: 100%;
+  border: none;
+  color: #ffffff;
+  background: #ffb700;
+  margin: 10px 0;
+}
+
+.btn-login:hover,
+.btn-login:focus,
+.btn-login:active {
+  background: #bf9730;
+}
+
+.form-input:focus {
+  box-shadow: none;
+}
