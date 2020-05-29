@@ -3,9 +3,9 @@ const bcrypt = require('bcrypt')
 
 exports.createUser = async (req, res, next) => {
   try {
-    const { username, password, repeat_password } = req.body
+    const { username, password, repeatPassword } = req.body
 
-    if (password === repeat_password) {
+    if (password === repeatPassword) {
       const passwordHash = bcrypt.hashSync(password, 10)
       const user = await User.create({ username: username, password: passwordHash })
 

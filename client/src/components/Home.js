@@ -10,7 +10,7 @@ import './../styles/home.css'
 function Home() {
   return (
     <div>
-      <Redirect to='/transaction' />
+      {/* <Redirect to='/transaction' /> */}
       <header>
         <div className="container grid-xl">
           <div className="columns">

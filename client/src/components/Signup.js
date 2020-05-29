@@ -38,9 +38,9 @@ function Signup() {
 
   const clickButtonSingUp = event => {
     if (usernameIsCorrect && passwordIsCorrect && repeatPasswordIsCorrect)
-      axios.post('singup', { username, password, repeatPassword })
+      axios.post('signup', { username, password, repeatPassword })
         .then(res => {
-          console.log(res)
+          console.log(res.data)
         })
         .catch(error => {
           console.log(error)
