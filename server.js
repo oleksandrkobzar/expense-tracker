@@ -8,6 +8,7 @@ require('./config/db')
 
 const login = require('./routes/login')
 const signup = require('./routes/signup')
+const category = require('./routes/category')
 
 app.use(cors())
 
@@ -17,6 +18,7 @@ if(process.env.NODE_ENV === 'development')
 app.use(express.json())
 app.use('/login', login)
 app.use('/signup', signup)
+app.use('/category', category)
 
 const PORT = process.env.PORT || 5000
 
