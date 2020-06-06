@@ -2,14 +2,14 @@ const express = require('express')
 const router = express.Router()
 
 const { createCategory, getCategories, updateCategory, deleteCategory } = require('../controllers/CategoryController') 
-const { validateCategory } = require('../controllers/ValidationController')
+const { validateCategory, validate } = require('../controllers/ValidationController')
 
 router.route('/')
-  .post(validateCategory, createCategory)
+  .post(validateCategory, validate, createCategory)
   .get(getCategories)
 
 router.route('/:id')
-  .put(validateCategory, updateCategory)
+  .put(validateCategory, validate, updateCategory)
   .delete(deleteCategory)
 
 module.exports = router

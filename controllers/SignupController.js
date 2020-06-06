@@ -6,7 +6,7 @@ exports.createUser = async (req, res, next) => {
     const { username, password, repeatPassword } = req.body
 
     if (password === repeatPassword) {
-      const passwordHash = bcrypt.hashSync(password, 10)
+      const passwordHash = await bcrypt.hashSync(password, 10)
       const user = await User.create({ username: username, password: passwordHash })
 
       return res.status(201).json({ data: user })
