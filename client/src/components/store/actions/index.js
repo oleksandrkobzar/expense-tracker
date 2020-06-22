@@ -6,3 +6,12 @@ export function toggleTransactionModal(visabilityTransactionModal) {
     visabilityTransactionModal
   }
 }
+
+export const CATEGORY_MODAL = 'CATEGORY_MODAL'
+
+export function toggleCategoryModal(visabilityCategoryModal) {
+  return {
+    type: CATEGORY_MODAL,
+    visabilityCategoryModal
+  }
+}
