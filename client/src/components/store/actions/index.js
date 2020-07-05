@@ -1,17 +1,19 @@
-export const TRANSACTION_MODAL = 'TRANSACTION_MODAL'
+import api from './../../../api'
 
-export function toggleTransactionModal(visabilityTransactionModal) {
-  return {
-    type: TRANSACTION_MODAL,
-    visabilityTransactionModal
-  }
+export const TRANSACTION_MODAL = 'TRANSACTION_MODAL'
+export const SET_CATEGORIES = 'SET_CATEGORIES'
+
+export function toggleTransactionModal(payload) {
+  return { type: TRANSACTION_MODAL, payload }
 }
 
-export const CATEGORY_MODAL = 'CATEGORY_MODAL'
+export function setCategories(payload) {
+  return { type: SET_CATEGORIES, payload }
+}
 
-export function toggleCategoryModal(visabilityCategoryModal) {
-  return {
-    type: CATEGORY_MODAL,
-    visabilityCategoryModal
-  }
+export function fetchCategories() {
+  return dispatch => api
+    .get('category')
+    .then(res => dispatch(setCategories(res.data.data)))
+    .catch(err => console.log(err))
 }

@@ -1,21 +1,18 @@
-import { TRANSACTION_MODAL, CATEGORY_MODAL } from './../actions'
+import { TRANSACTION_MODAL, SET_CATEGORIES } from './../actions'
 
 const initialState = {
   visabilityTransactionModal: false,
-  visabilityCategoryModal: false
+  categories: []
 }
 
 function rootReducer(state = initialState, action) {
-  switch (action.type) {
-    case TRANSACTION_MODAL:
-      return Object.assign({}, state, { visabilityTransactionModal: action.visabilityTransactionModal })
+  if (action.type === TRANSACTION_MODAL)
+    return Object.assign({}, state, { visabilityTransactionModal: action.payload })
 
-    case CATEGORY_MODAL:
-      return Object.assign({}, state, { visabilityCategoryModal: action.visabilityCategoryModal })
+  if (action.type === SET_CATEGORIES)
+    return Object.assign({}, state, { categories: action.payload })
 
-    default:
-      return state
-  }
+  return state
 }
 
 export default rootReducer
