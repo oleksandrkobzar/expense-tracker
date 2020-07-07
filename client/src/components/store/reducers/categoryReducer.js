@@ -7,7 +7,7 @@ const initialState = {
 
 function categoryReducer(state = initialState, action) {
   if (action.type === CREATE_CATEGORY)
-    return { ...state, ...action.payload.data }
+    return Object.assign({}, state, {})
 
   if (action.type === CATEGORY_MODAL)
     return Object.assign({}, state,

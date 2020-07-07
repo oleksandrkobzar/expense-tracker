@@ -47,11 +47,17 @@ a:visited {
   color: #ffffff;
 }
 
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+
 .btn-create,
 .btn-cancel {
   color: #ffffff;
   padding: 0 20px;
   border: none;
+  margin: 2px 10px;
 }
 
 .btn-create {
@@ -60,7 +66,6 @@ a:visited {
 
 .btn-cancel {
   background-color: #a65800;
-  margin-left: 20px;
 }
 
 .btn-create:hover,
@@ -98,4 +103,9 @@ a:visited {
 
 .form-input:focus {
   box-shadow: none;
+}
+
+.category {
+  margin: 5px;
+  padding: 5px;
 }

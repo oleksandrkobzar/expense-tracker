@@ -20,6 +20,18 @@ exports.validateCategory = [
     .bail()
 ]
 
+exports.validateTransaction = [
+  check('amount').trim().escape()
+    .notEmpty().withMessage('Goal transaction can not be empty')
+    .isFloat().withMessage('Goal transaction must be numeric'),
+
+  check('description').trim().escape()
+    .isLength({ max: 100 }).withMessage('Description transaction length max: 100'),
+
+  check('categories').notEmpty().withMessage('Select a category')
+    .bail()
+]
+
 exports.validateCreateUser = [
   check('username').trim().escape()
     .notEmpty().withMessage('Your username can not be empty')

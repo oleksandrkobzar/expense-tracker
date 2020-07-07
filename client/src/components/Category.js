@@ -27,7 +27,7 @@ function Category({ toggleCategoryModal, categories, fetchCategories, editCatego
         <button className="btn btn-plus s-circle tooltip tooltip-left" onClick={() => toggleCategoryModal(true)} data-tooltip="Create category"><FontAwesomeIcon icon={faPlus} size="lg" /></button>
       </div>
       <div>
-        {categories.map(({ _id, title, background }) => <span key={_id} onClick={() => editCategoryBtn(_id)} className="label label-rounded" style={{ backgroundColor: background }}>{title}</span>)}
+        {categories.map(({ _id, title, background }) => <div key={_id} onClick={() => editCategoryBtn(_id)} className="label label-rounded category" style={{ backgroundColor: background }}>{title}</div>)}
       </div>
       <CategoryModal />
     </div>

@@ -73,7 +73,7 @@ function CategoryModal({ visabilityCategoryModal, toggleCategoryModal, createCat
               width='100%' />
           </div>
         </div>
-        <div className="modal-footer">
+        <div className="modal-footer btn-group">
           {
             editingCategory ? <button className="btn btn-create" onClick={updateCategoryBtn}>Update</button>
               : <button className="btn btn-create" onClick={createCategoryBtn}>Create</button>

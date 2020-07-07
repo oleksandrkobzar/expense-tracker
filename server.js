@@ -9,6 +9,7 @@ require('./config/db')
 const login = require('./routes/login')
 const signup = require('./routes/signup')
 const category = require('./routes/category')
+const transaction = require('./routes/transaction')
 
 app.use(cors())
 
@@ -19,6 +20,7 @@ app.use(express.json())
 app.use('/login', login)
 app.use('/signup', signup)
 app.use('/category', category)
+app.use('/transaction', transaction)
 
 const PORT = process.env.PORT || 5000
 
