@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const categorySchema = new mongoose.Schema({
+  user_id: {
+    type: String,
+    required: [true, 'User ID is required']
+  },
   title: {
     type: String,
     unique: true,

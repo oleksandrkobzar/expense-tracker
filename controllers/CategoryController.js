@@ -3,8 +3,9 @@ const Category = require('../models/Category')
 exports.createCategory = async (req, res, next) => {
   try {
     const { title, background } = req.body
+    const user_id = '5f04af8c78ee2c2614507ee1' //test user_id
 
-    const category = await Category.create({ title, background })
+    const category = await Category.create({ user_id, title, background })
 
     return res.status(201).json({ data: category })
   }
@@ -39,8 +40,9 @@ exports.updateCategory = async (req, res, next) => {
 
     const { id } = req.params
     const { title, background } = req.body
+    const user_id = '5f04af8c78ee2c2614507ee1' //test user_id
 
-    const category = await Category.update({ _id: id }, { title, background })
+    const category = await Category.update({ _id: id, user_id }, { title, background })
 
     return res.status(201).json({ data: category })
   }
@@ -61,8 +63,9 @@ exports.updateCategory = async (req, res, next) => {
 exports.deleteCategory = async (req, res, next) => {
   try {
     const { id } = req.params
+    const user_id = '5f04af8c78ee2c2614507ee1' //test user_id
 
-    const category = await Category.remove({ _id: id })
+    const category = await Category.remove({ _id: id, user_id })
 
     return res.status(201).json({ data: category })
   }

@@ -2,7 +2,8 @@ const Transaction = require('../models/Transaction')
 
 exports.createTransaction = async (req, res, next) => {
   try {
-    const { user_id, amount, description, type, categories } = req.body
+    const { amount, description, type, categories } = req.body
+    const user_id = '5f04af8c78ee2c2614507ee1' //test user_id
     
     const transaction = await Transaction.create({ user_id, amount, description, type, categories })
 
@@ -34,9 +35,9 @@ exports.getTransactions = async (req, res, next) => {
 
 exports.updateTransaction = async (req, res, next) => {
   try {
-
     const { id } = req.params
-    const { user_id, amount, description, type, categories } = req.body
+    const { amount, description, type, categories } = req.body
+    const user_id = '5f04af8c78ee2c2614507ee1' //test user_id
 
     const transaction = await Transaction.update({ _id: id, user_id: user_id }, { amount, description, type, categories })
 
@@ -56,8 +57,9 @@ exports.updateTransaction = async (req, res, next) => {
 exports.deleteTransaction = async (req, res, next) => {
   try {
     const { id } = req.params
+    const user_id = '5f04af8c78ee2c2614507ee1' //test user_id
 
-    const transaction = await Transaction.remove({ _id: id })
+    const transaction = await Transaction.remove({ _id: id, user_id })
 
     return res.status(201).json({ data: transaction })
   }
